@@ -1,0 +1,2 @@
+# RubyFastExcel
+RubyでEXCELファイルを出力するサンプル
