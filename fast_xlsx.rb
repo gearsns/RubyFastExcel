@@ -29,7 +29,7 @@ class FastXLSX
                     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
                     <table xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xr xr3" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3" id="1" name="テーブル1" displayName="テーブル1" ref="A1:#{rangeReference}" totalsRowShown="0"><autoFilter ref="A1:#{rangeReference}"/><tableColumns count="#{@header.size}">
                     #{@header.map.with_index{|n, i|
-                        "<tableColumn id=\"#{i+1}\" name=\"#{n}\"/>"
+                        "<tableColumn id=\"#{i+1}\" name=\"#{n.gsub("\"", "&quot;")}\"/>"
                     }.join("")}
                     </tableColumns><tableStyleInfo name="TableStyleMedium2" showFirstColumn="0" showLastColumn="0" showRowStripes="1" showColumnStripes="0"/></table>
                 EOS
